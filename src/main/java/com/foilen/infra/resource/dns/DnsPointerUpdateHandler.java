@@ -29,14 +29,19 @@ public class DnsPointerUpdateHandler extends AbstractCommonMethodUpdateEventHand
         IPResourceService resourceService = services.getResourceService();
 
         DnsPointer resource = context.getResource();
+        logger.debug("Pointer {}", resource.getName());
 
         context.getManagedResourceTypes().add(DnsEntry.class);
 
         // Use a DnsEntry per machine
         List<Machine> machines = resourceService.linkFindAllByFromResourceAndLinkTypeAndToResourceClass(resource, LinkTypeConstants.POINTS_TO, Machine.class);
+        logger.debug("{} points to {} machines", resource.getName(), machines.size());
 
         for (Machine machine : machines) {
-            if (!Strings.isNullOrEmpty(machine.getPublicIp())) {
+            if (Strings.isNullOrEmpty(machine.getPublicIp())) {
+                logger.debug("{} ignoring DnsEntry {} : no public ip", resource.getName(), machine.getName());
+            } else {
+                logger.debug("{} adding DnsEntry {}", resource.getName(), machine.getPublicIp());
                 context.getManagedResources().add(new DnsEntry(resource.getName(), DnsEntryType.A, machine.getPublicIp()));
             }
         }
