@@ -49,22 +49,4 @@ public class DnsEntryTest extends AbstractIPPluginTest {
 
     }
 
-    @Test
-    public void test_perf() {
-
-        IPResourceService resourceService = getCommonServicesContext().getResourceService();
-        InternalChangeService internalChangeService = getInternalServicesContext().getInternalChangeService();
-
-        // Create some
-        ChangesContext changes = new ChangesContext(resourceService);
-        for (int i = 0; i < 500; ++i) {
-            changes.resourceAdd(new DnsEntry("d" + i + ".example.com", DnsEntryType.TXT, "hello"));
-            if (i % 50 == 0) {
-                internalChangeService.changesExecute(changes);
-            }
-        }
-        internalChangeService.changesExecute(changes);
-
-    }
-
 }
