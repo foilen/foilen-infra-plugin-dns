@@ -1,6 +1,6 @@
 /*
-    Foilen Infra Resource Infra Config
-    https://github.com/foilen/foilen-infra-resource-infraconfig
+    Foilen Infra Resource DNS
+    https://github.com/foilen/foilen-infra-resource-dns
     Copyright (c) 2018 Foilen (http://foilen.com)
 
     The MIT License
