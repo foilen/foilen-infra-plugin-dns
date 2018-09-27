@@ -1,0 +1,139 @@
+{
+  "resources" : [ {
+    "resource" : "DnsEntry | d0.example.com / TXT | hello",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | d0.example.com | Domain for d0.example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "details" : "hello",
+      "meta" : { },
+      "name" : "d0.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "hello",
+      "resourceName" : "d0.example.com / TXT",
+      "type" : "TXT"
+    }
+  }, {
+    "resource" : "DnsEntry | d1.example.com / TXT | hello 2",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | d1.example.com | Domain for d1.example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "details" : "hello 2",
+      "meta" : { },
+      "name" : "d1.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "hello 2",
+      "resourceName" : "d1.example.com / TXT",
+      "type" : "TXT"
+    }
+  }, {
+    "resource" : "DnsEntry | d3.example.com / TXT | hello",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | d3.example.com | Domain for d3.example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "details" : "hello",
+      "meta" : { },
+      "name" : "d3.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "hello",
+      "resourceName" : "d3.example.com / TXT",
+      "type" : "TXT"
+    }
+  }, {
+    "resource" : "DnsEntry | u2.example.com / TXT | hello",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | u2.example.com | Domain for u2.example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "details" : "hello",
+      "meta" : { },
+      "name" : "u2.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "hello",
+      "resourceName" : "u2.example.com / TXT",
+      "type" : "TXT"
+    }
+  }, {
+    "resource" : "Domain | d0.example.com | Domain for d0.example.com",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | example.com | Domain for example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "meta" : { },
+      "name" : "d0.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "Domain for d0.example.com",
+      "resourceName" : "d0.example.com",
+      "reverseName" : "com.example.d0"
+    }
+  }, {
+    "resource" : "Domain | d1.example.com | Domain for d1.example.com",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | example.com | Domain for example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "meta" : { },
+      "name" : "d1.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "Domain for d1.example.com",
+      "resourceName" : "d1.example.com",
+      "reverseName" : "com.example.d1"
+    }
+  }, {
+    "resource" : "Domain | d3.example.com | Domain for d3.example.com",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | example.com | Domain for example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "meta" : { },
+      "name" : "d3.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "Domain for d3.example.com",
+      "resourceName" : "d3.example.com",
+      "reverseName" : "com.example.d3"
+    }
+  }, {
+    "resource" : "Domain | example.com | Domain for example.com",
+    "links" : [ ],
+    "tags" : [ ],
+    "content" : {
+      "meta" : { },
+      "name" : "example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "Domain for example.com",
+      "resourceName" : "example.com",
+      "reverseName" : "com.example"
+    }
+  }, {
+    "resource" : "Domain | u2.example.com | Domain for u2.example.com",
+    "links" : [ {
+      "type" : "MANAGES",
+      "to" : "Domain | example.com | Domain for example.com"
+    } ],
+    "tags" : [ ],
+    "content" : {
+      "meta" : { },
+      "name" : "u2.example.com",
+      "resourceCategory" : "NET",
+      "resourceDescription" : "Domain for u2.example.com",
+      "resourceName" : "u2.example.com",
+      "reverseName" : "com.example.u2"
+    }
+  } ]
+}
