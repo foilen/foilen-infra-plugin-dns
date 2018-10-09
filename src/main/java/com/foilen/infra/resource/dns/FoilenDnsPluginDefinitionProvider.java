@@ -46,6 +46,7 @@ public class FoilenDnsPluginDefinitionProvider implements IPPluginDefinitionProv
 
         pluginDefinitionV1.addUpdateHandler(new DnsEntryUpdateHandler());
         pluginDefinitionV1.addUpdateHandler(new DnsPointerUpdateHandler());
+        pluginDefinitionV1.addUpdateHandler(new DomainUpdateHandler());
         pluginDefinitionV1.addUpdateHandler(new MachineUpdateHandler());
 
         return pluginDefinitionV1;
