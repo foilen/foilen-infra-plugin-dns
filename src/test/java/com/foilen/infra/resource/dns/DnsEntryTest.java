@@ -9,24 +9,16 @@
  */
 package com.foilen.infra.resource.dns;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import com.foilen.infra.plugin.core.system.fake.junits.AbstractIPPluginTest;
 import com.foilen.infra.plugin.core.system.junits.JunitsHelper;
-import com.foilen.infra.plugin.v1.core.common.DomainHelper;
 import com.foilen.infra.plugin.v1.core.context.ChangesContext;
-import com.foilen.infra.plugin.v1.core.exception.IllegalUpdateException;
 import com.foilen.infra.plugin.v1.core.service.IPResourceService;
 import com.foilen.infra.plugin.v1.core.service.internal.InternalChangeService;
 import com.foilen.infra.resource.dns.model.DnsEntryType;
-import com.foilen.infra.resource.domain.Domain;
 
 public class DnsEntryTest extends AbstractIPPluginTest {
-
-    private Domain createDomain(String name) {
-        return new Domain(name, DomainHelper.reverseDomainName(name));
-    }
 
     @Test
     public void test_basic() {
@@ -49,15 +41,6 @@ public class DnsEntryTest extends AbstractIPPluginTest {
         changes.resourceUpdate(dnsEntry, new DnsEntry("u2.example.com", DnsEntryType.TXT, "hello"));
         internalChangeService.changesExecute(changes);
         JunitsHelper.assertState(getCommonServicesContext(), getInternalServicesContext(), "DnsEntryTest_test_basic-state-2.json", getClass(), true);
-
-        // Delete domain (fail)
-        changes.resourceDelete(createDomain("d1.example.com"));
-        try {
-            internalChangeService.changesExecute(changes);
-            Assert.fail("Must fail");
-        } catch (IllegalUpdateException e) {
-            Assert.assertEquals("You cannot delete a domain that is used by a DnsEntry", e.getMessage());
-        }
 
         // Remove some
         changes.resourceDelete(resourceService.resourceFindByPk(new DnsEntry("d4.example.com", DnsEntryType.TXT, "hello")).get());
