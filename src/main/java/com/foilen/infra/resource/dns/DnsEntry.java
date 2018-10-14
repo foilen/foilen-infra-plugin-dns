@@ -26,6 +26,8 @@ import com.google.common.collect.ComparisonChain;
  */
 public class DnsEntry extends AbstractIPResource implements Comparable<DnsEntry> {
 
+    public static final String RESOURCE_TYPE = "Dns Entry";
+
     public static final String PROPERTY_NAME = "name";
     public static final String PROPERTY_TYPE = "type";
     public static final String PROPERTY_DETAILS = "details";

@@ -27,6 +27,8 @@ import com.google.common.collect.ComparisonChain;
  */
 public class DnsPointer extends AbstractIPResource implements Comparable<DnsPointer> {
 
+    public static final String RESOURCE_TYPE = "Dns Pointer";
+
     public static final String PROPERTY_NAME = "name";
 
     private String name;

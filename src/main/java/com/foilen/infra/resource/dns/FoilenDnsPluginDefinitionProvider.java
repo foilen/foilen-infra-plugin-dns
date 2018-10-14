@@ -21,7 +21,7 @@ public class FoilenDnsPluginDefinitionProvider implements IPPluginDefinitionProv
     public IPPluginDefinitionV1 getIPPluginDefinition() {
         IPPluginDefinitionV1 pluginDefinitionV1 = new IPPluginDefinitionV1("Foilen", "DNS", "To manage DNS entries", "1.0.0");
 
-        pluginDefinitionV1.addCustomResource(DnsEntry.class, "Dns Entry", //
+        pluginDefinitionV1.addCustomResource(DnsEntry.class, DnsEntry.RESOURCE_TYPE, //
                 Arrays.asList( //
                         DnsEntry.PROPERTY_NAME, //
                         DnsEntry.PROPERTY_TYPE, //
@@ -33,7 +33,7 @@ public class FoilenDnsPluginDefinitionProvider implements IPPluginDefinitionProv
                         DnsEntry.PROPERTY_DETAILS //
                 ));
 
-        pluginDefinitionV1.addCustomResource(DnsPointer.class, "Dns Pointer", //
+        pluginDefinitionV1.addCustomResource(DnsPointer.class, DnsPointer.RESOURCE_TYPE, //
                 Arrays.asList( //
                         DnsPointer.PROPERTY_NAME //
                 ), //
